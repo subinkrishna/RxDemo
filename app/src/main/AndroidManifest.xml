@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".github.GithubUserActivity" />
+        <activity android:name=".github.ui.GithubUserActivity" />
 
     </application>
 

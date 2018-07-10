@@ -1,4 +1,4 @@
-package com.subinkrishna.rxdemo.github
+package com.subinkrishna.rxdemo.github.ui
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -16,8 +16,7 @@ import androidx.core.view.isVisible
 import com.subinkrishna.rxdemo.R
 
 /**
- * Github userLive profile activity. Renders the profile & repository details
- * for the specified userLive.
+ * Github user profile activity. Renders the profile & repository details (first 30, doesn't do paging).
  *
  * @author Subinkrishna Gopi
  */

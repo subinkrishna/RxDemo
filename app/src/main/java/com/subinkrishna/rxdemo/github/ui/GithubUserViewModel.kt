@@ -1,10 +1,13 @@
-package com.subinkrishna.rxdemo.github
+package com.subinkrishna.rxdemo.github.ui
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.Transformations
 import android.arch.lifecycle.ViewModel
 import android.util.Log
+import com.subinkrishna.rxdemo.github.Github
+import com.subinkrishna.rxdemo.github.Repo
+import com.subinkrishna.rxdemo.github.User
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable

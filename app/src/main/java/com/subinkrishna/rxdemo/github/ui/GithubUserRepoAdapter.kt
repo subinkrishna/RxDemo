@@ -1,4 +1,4 @@
-package com.subinkrishna.rxdemo.github
+package com.subinkrishna.rxdemo.github.ui
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -9,6 +9,8 @@ import android.widget.TextView
 import com.squareup.picasso.Picasso
 import com.subinkrishna.rxdemo.R
 import com.subinkrishna.rxdemo.ext.setTextOrHide
+import com.subinkrishna.rxdemo.github.Repo
+import com.subinkrishna.rxdemo.github.User
 
 /**
  * [RecyclerView.Adapter] implementation for user repo

@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
 import androidx.core.widget.toast
-import com.subinkrishna.rxdemo.github.GithubUserActivity
+import com.subinkrishna.rxdemo.github.ui.GithubUserActivity
 
 /**
  * Launcher activity
