@@ -6,6 +6,15 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
 
+    // Read the Github access token from 'local.properties'
+    String githubToken = ""
+    def localProperties = project.rootProject.file('local.properties')
+    if (localProperties.canRead()) {
+        Properties p = new Properties()
+        p.load(new FileInputStream(localProperties))
+        githubToken = p['github.access.token'].toString()
+    }
+
     defaultConfig {
         applicationId "com.subinkrishna.rxdemo"
         minSdkVersion 21
@@ -13,6 +22,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField 'String', 'GITHUB_ACCESS_TOKEN', "\"$githubToken\""
     }
 
     compileOptions {

@@ -1,5 +1,6 @@
 package com.subinkrishna.rxdemo.github
 
+import com.subinkrishna.rxdemo.BuildConfig
 import io.reactivex.Single
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -24,15 +25,22 @@ class Github {
         // Constants
         const val BASE_URL = "https://api.github.com"
 
-        // HTTP logging interceptor
-        private val loggingInterceptor: Interceptor by lazy {
-            HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.HEADERS }
-        }
-
         // HTTP client builder
         private val httpClientBuilder: OkHttpClient.Builder by lazy {
             OkHttpClient.Builder().apply {
-                addInterceptor(loggingInterceptor)
+                // Add common headers & auth token to all requests
+                addInterceptor { chain ->
+                    val req = chain.request().newBuilder()
+                            .addHeader("User-Agent", "RxDemo-App")
+                            .addHeader("Authorization", BuildConfig.GITHUB_ACCESS_TOKEN)
+                            .build()
+                    chain.proceed(req)
+                }
+                // Add logging interceptor
+                addInterceptor(HttpLoggingInterceptor().apply {
+                    level = HttpLoggingInterceptor.Level.HEADERS
+                })
+                // Timeouts
                 connectTimeout(10, TimeUnit.SECONDS)
                 readTimeout(2, TimeUnit.SECONDS)
             }
