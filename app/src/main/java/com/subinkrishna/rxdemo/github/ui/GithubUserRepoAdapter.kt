@@ -13,7 +13,7 @@ import com.subinkrishna.rxdemo.github.Repo
 import com.subinkrishna.rxdemo.github.User
 
 /**
- * [RecyclerView.Adapter] implementation for user repo
+ * [RecyclerView.Adapter] implementation for user profile-repo listing
  *
  * @author Subinkrishna Gopi
  */

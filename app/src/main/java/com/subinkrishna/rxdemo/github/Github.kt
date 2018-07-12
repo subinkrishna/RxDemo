@@ -2,7 +2,6 @@ package com.subinkrishna.rxdemo.github
 
 import com.subinkrishna.rxdemo.BuildConfig
 import io.reactivex.Single
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -23,7 +22,7 @@ class Github {
         private const val TAG = "Github"
 
         // Constants
-        const val BASE_URL = "https://api.github.com"
+        private const val BASE_URL = "https://api.github.com"
 
         // HTTP client builder
         private val httpClientBuilder: OkHttpClient.Builder by lazy {
@@ -46,16 +45,13 @@ class Github {
             }
         }
 
-        // HTTP client
-        private val httpClient: OkHttpClient by lazy { httpClientBuilder.build() }
-
         // Retrofit instance
         private val retrofit: Retrofit by lazy {
             Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .client(httpClient)
+                    .client(httpClientBuilder.build())
                     .build()
         }
 
@@ -66,17 +62,17 @@ class Github {
         // Public methods
 
         /**
-         * Fetches the userLive details
+         * Fetches the user profile
          *
-         * @param username - Github userLive username
+         * @param username
          */
         @JvmStatic
         fun user(username: String): Single<User> = service.user(username)
 
         /**
-         * Fetches the userLive reposLive
+         * Fetches the user reposLive
          *
-         * @param username - Github userLive username
+         * @param username
          */
         @JvmStatic
         fun repos(username: String): Single<List<Repo>?> = service.repos(username)

@@ -12,19 +12,19 @@ import retrofit2.http.Path
  */
 interface GithubService {
     /**
-     * Fetches Github userLive profile
+     * Fetches Github user profile
      * API: https://api.github.com/users/{USERNAME}
      *
-     * @param username - userLive login id
+     * @param username
      */
     @GET("/users/{username}")
     fun user(@Path(value = "username") username: String): Single<User>
 
     /**
-     * Fetches Github userLive's public repositories
+     * Fetches Github user's public repositories
      * API: https://api.github.com/users/{USERNAME}/repos
      *
-     * @param username - userLive login id
+     * @param username
      */
     @GET("/users/{username}/repos")
     fun repos(@Path(value = "username") username: String): Single<List<Repo>?>

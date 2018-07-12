@@ -15,6 +15,8 @@ import io.reactivex.functions.BiFunction
 import io.reactivex.schedulers.Schedulers
 
 /**
+ * [ViewModel] for [GithubUserActivity]
+ *
  * @author Subinkrishna Gopi
  */
 class GithubUserViewModel : ViewModel() {
