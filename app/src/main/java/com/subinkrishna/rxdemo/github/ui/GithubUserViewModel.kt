@@ -37,7 +37,7 @@ class GithubUserViewModel : ViewModel() {
             else if (field != value) {
                 field = value
                 viewModeLive.value = ViewMode.PROGRESS
-                inputLive.value = value
+                inputLive.value = value.orEmpty()
             }
         }
 
