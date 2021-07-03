@@ -1,10 +1,10 @@
 package com.subinkrishna.rxdemo
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
-import androidx.core.widget.toast
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.subinkrishna.rxdemo.github.ui.GithubUserActivity
 
 /**
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             if (username.isNotEmpty()) {
                 startActivity(GithubUserActivity.getStartIntent(this, username.toString()))
             } else {
-                toast("Please enter a valid username")
+                Toast.makeText(this, "Please enter a valid username", Toast.LENGTH_SHORT).show()
             }
         }
 

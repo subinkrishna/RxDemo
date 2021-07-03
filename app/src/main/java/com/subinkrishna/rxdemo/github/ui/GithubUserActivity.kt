@@ -1,18 +1,18 @@
 package com.subinkrishna.rxdemo.github.ui
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.subinkrishna.rxdemo.R
 
 /**
@@ -70,7 +70,7 @@ class GithubUserActivity : AppCompatActivity() {
         username = intent?.getStringExtra(KEY_USERNAME)
 
         // Get ViewModel
-        ViewModelProviders.of(this)[GithubUserViewModel::class.java].apply {
+        ViewModelProvider(this)[GithubUserViewModel::class.java].apply {
             // Set input
             username = this@GithubUserActivity.username
 

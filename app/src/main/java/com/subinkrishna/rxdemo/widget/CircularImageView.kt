@@ -2,10 +2,10 @@ package com.subinkrishna.rxdemo.widget
 
 import android.content.Context
 import android.graphics.Outline
-import android.support.v7.widget.AppCompatImageView
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewOutlineProvider
+import androidx.appcompat.widget.AppCompatImageView
 
 /**
  * Circular ImageView implementation
