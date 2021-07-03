@@ -57,7 +57,7 @@ class GithubUserRepoAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 holder.bio.setTextOrHide(user?.bio)
                 Picasso.get().load(user?.avatarUrl)
                         .fit().centerCrop()
-                        .placeholder(R.drawable.ic_profile_placeholder_nodpi)
+                        // .placeholder(R.drawable.ic_profile_placeholder_nodpi)
                         .error(R.drawable.ic_profile_placeholder_nodpi)
                         .into(holder.avatar)
             }

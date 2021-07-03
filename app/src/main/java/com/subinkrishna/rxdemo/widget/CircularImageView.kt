@@ -24,8 +24,8 @@ class CircularImageView @JvmOverloads constructor(
     }
 
     init {
-        outlineProvider = CIRCULAR
-        clipToOutline = true
+        // outlineProvider = CIRCULAR
+        // clipToOutline = true
     }
 }
 
